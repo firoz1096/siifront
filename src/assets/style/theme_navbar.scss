@@ -1,0 +1,302 @@
+
+
+.navbar_collapse {
+    width: 100%;
+    display: block;
+
+@media (max-width: 768px) { 
+border-top: solid 1px #e0e0e0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 5;
+  background-color: #fff;
+  width: 100%; /* avoids scrollbar bug */
+  height: calc(100vh - 60px);
+  overflow-y: auto; /* scrollbar only if needed */
+  display: none; /* hidden by default, toggle later */
+}
+
+
+.navbar_ul {
+
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+    @media (max-width: 768px) { 
+        text-align: start;
+        
+    }
+
+    .nav_item {
+        list-style-type: none;
+        display: inline;
+        margin:0 0.6rem;
+        position: relative;
+         font-size: 1.1rem;
+
+        @media (max-width: 768px) { 
+            display: block;
+            margin: 0;
+            border-bottom: solid 1px #e0e0e0;
+        }
+
+        svg {
+            font-size: 90%;
+            // @media (max-width: 768px) { 
+            // position: absolute;
+            // right: 0;
+            // font-size: 1.1rem;
+            // }
+        }
+        
+
+        a {
+            display: inline-block;
+            color:$dark-base;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 4px 0;
+
+            @media (max-width: 768px) { 
+                display: block;
+                color: $dark-base;
+                padding: 0.5rem 1rem;
+                font-weight: 500;
+               
+              
+            }
+
+            &:hover        
+
+            {
+                text-decoration: none;
+                color: $pr-base;
+
+                @media (max-width: 768px) { 
+                    color:$se-base;
+                }
+
+
+            }
+              
+}
+
+    @media (max-width: 768px) { 
+
+            &:after {
+            content: "›"; 
+            vertical-align: middle;
+            color: inherit; /* or custom color */
+            font-size: 1.5rem;            
+            position: absolute;
+            right: 25px ;
+            top: 50%;
+            transform: translate(0, -50%);
+            }  
+
+        }
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            position: absolute;
+            left: -20px;
+            top: 36px;
+            text-align: left;
+            background-color: $light-base;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 16px;
+            z-index: 5;
+            animation: rotateMenu 300ms ease-in-out forwards;
+            transform-origin: top center;
+            @keyframes growDown {
+                0% {
+                    transform: scaleY(0)
+                }
+                80% {
+                    transform: scaleY(1.1)
+                }
+                100% {
+                    transform: scaleY(1)
+                }
+            }
+            @keyframes rotateMenu {
+                0% {
+                    transform: rotateX(-90deg)
+                }
+                70% {
+                    transform: rotateX(20deg) 
+                }
+                100% {
+                    transform: rotateX(0deg) 
+                }
+            }
+
+            @media (max-width: 768px) { 
+                position: relative;
+                width: 100%;
+                top: 0;
+                background-color: #fff;
+                box-shadow: none;
+        
+
+            }
+         
+            li{
+                list-style-type: none;
+                display: block;
+                margin: 10px 10px 12px 10px;
+
+                @media (max-width: 768px) { 
+                margin: px 10px;
+
+                }
+                
+                 a {
+                    display: block;
+                    padding: 0 6px;
+                    color:$dark-base;
+                    text-decoration: none;
+                    font-weight: 400;
+                  
+                    @media (max-width: 768px) { 
+                        font-size: 90%;
+
+                    }
+
+                    &:hover {
+                        color: $pr-base;
+                    }
+                }
+
+            }
+
+
+        }
+
+    }
+
+
+
+
+}
+
+}
+
+
+
+.header_right_top {
+
+    .phone_number {
+         font-size: 1rem; 
+          @media (max-width: 768px) { 
+         font-size: 1.2rem; 
+}
+    }
+}
+
+.search_section {
+display: inline-block;
+position: relative;
+border: solid 2px gray;
+padding-right: 0px;
+border-radius: 14px;
+@media (max-width: 768px) { 
+    margin: 1rem 1rem;
+}
+
+    input:not([type]), input[type="text"] {  
+        width: 150px;
+        @media (max-width: 768px) { 
+            width: 250px;
+            padding: 7px 4px 7px 10px;
+        }
+
+        align-items: start;
+        appearance: none;
+        background: transparent;
+        border: 0;
+        color: $dark-base;
+        font-size: 1rem;
+        font-weight: 300;
+        position: relative;
+        padding: 4px 4px 4px 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0;
+
+        &:focus, &:active {
+        border: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+        outline: none;
+
+        }
+
+    
+        
+    }
+
+    .search_button {
+        font-size: 1rem;
+        margin: 0;
+        border: none;
+        background: transparent;
+        position: relative;
+        padding: 4px 10px 4px 4px;
+        display: inline-block;
+       
+        @media (max-width: 768px) { 
+            svg {
+
+                position: absolute !important;
+                left: -50%;
+                top: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+ 
+        
+    }
+
+
+&:focus, &:active, &:hover {
+
+    border: solid 2px $dark-base;
+}
+
+
+}
+
+
+
+.h_icon {
+margin-right: 2px;
+color: $dark-base;
+height: 20px;
+}
+
+
+
+.nav_item.active a {
+  color: $pr-base!important;   /* highlight color */
+   border-bottom: solid 3px $pr-base;
+
+   @media (max-width: 768px) { 
+    border-bottom: solid 3px $light-base;
+}
+
+}
+
+.nav_item.active a .h_icon {
+  color: $pr-base!important;   /* highlight icon */  
+  
+ 
+}
+

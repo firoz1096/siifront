@@ -1,0 +1,98 @@
+
+
+.breadcrumb_area {
+
+    position: relative;
+
+
+.photo {
+
+//   img {
+//     width: 100%;
+//     @include media-breakpoint-down(md) { 
+//         height: 100px;
+//     }
+
+//   }
+
+
+background-image: url("../images/backgrounds/who-we-are.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+height: 150x;
+
+    .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 4, 0.8);
+    z-index: 2;
+    display: flex;
+    align-items: center;  
+
+        .breadcrumb_title {
+            color: $light-base;
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin: 0;
+    
+            @include media-breakpoint-down(md) { 
+                font-size: 1.5rem;
+            }
+    
+    
+        }
+    
+        .breadcrumb_list {
+           margin: 0.3rem 0;
+           padding: 0;
+    
+            li {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+    
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: white;
+                margin-right: 6px;
+                
+            }
+    
+    
+            &:last-child {
+                
+                color:  rgba(255, 255, 255, 0.5);
+    
+                &:before {
+                    display: inline-block;
+                    content: ('/');    
+                    margin-right: 6px;
+                    
+                }
+            }
+            
+            }
+        }
+
+
+    }
+
+
+
+
+  
+
+}
+
+
+ 
+}
+

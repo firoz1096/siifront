@@ -1,0 +1,26 @@
+.mini_header {
+    // background-color: $pr-base;
+    color: $light-base;
+    font-size: 0.9rem;
+    display: block;
+    padding: 6px 0;
+    position: relative;   
+ 
+
+    a {
+        color: $light-base;
+        display: inline-block;
+        text-decoration: none;     
+
+        &:hover {
+            color: $light-base;
+        }
+
+    }
+}
+
+
+
+.mini_header_inner {
+    background-color: $pr-base;
+}

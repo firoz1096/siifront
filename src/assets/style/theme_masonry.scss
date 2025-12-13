@@ -1,0 +1,103 @@
+$gallery-gap: 15px;
+$gallery-border-radius: 5px;
+$gallery-hover-scale: 1.05;
+$lightbox-bg: rgba(0, 0, 0, 0.9);
+$lightbox-z: 9999;
+$lightbox-btn-color: #fff;
+$lightbox-btn-size: 40px;
+$arrow-size: 60px;
+$counter-font: 18px;
+
+// Masonry Gallery
+.masonry_gallery_section {
+  margin-bottom: 50px;
+
+  .masonry {
+    column-count: 4;
+    column-gap: $gallery-gap;
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: $gallery-gap;
+      cursor: pointer;
+
+      .gallery-img {
+        width: 100%;
+        display: block;
+        border-radius: $gallery-border-radius;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale($gallery-hover-scale);
+        }
+      }
+    }
+
+    @media (max-width: 1200px) { column-count: 3; }
+    @media (max-width: 900px) { column-count: 2; }
+    @media (max-width: 600px) { column-count: 1; }
+  }
+}
+
+// Lightbox
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $lightbox-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $lightbox-z;
+
+  .lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: $gallery-border-radius;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 30px;             // bottom spacing
+    left: 50%;                // horizontally center
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: $lightbox-btn-color;
+    font-size: $counter-font;
+    z-index: 2;
+  }
+
+  .close-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: $lightbox-btn-size;
+    color: $lightbox-btn-color;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: $lightbox-z + 1;
+  }
+
+  .arrow {
+    position: fixed;
+    top: 50%;
+    font-size: $arrow-size;
+    color: $lightbox-btn-color;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: $lightbox-z + 1;
+
+    &.left-arrow { left: 20px; }
+    &.right-arrow { right: 20px; }
+  }
+}
