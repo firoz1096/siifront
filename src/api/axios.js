@@ -1,26 +1,29 @@
 import axios from "axios";
 
+export const API_BASE =
+  process.env.REACT_APP_API_BASE || "http://localhost:5000/api";
+
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/auth",
+  baseURL: API_BASE,
 });
 
 // Attach token automatically
 API.interceptors.request.use(
-  config => {
+  (config) => {
     const token = localStorage.getItem("token");
     if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 );
 
 // Auto logout on 401
 API.interceptors.response.use(
-  response => response,
-  error => {
-    if (error.response && error.response.status === 401) {
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
