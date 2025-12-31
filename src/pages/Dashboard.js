@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
+import { Link } from "react-router";
+import { FiEdit } from "react-icons/fi";
+
 
 export default function Dashboard() {
   const [message, setMessage] = useState("");
@@ -37,13 +40,42 @@ export default function Dashboard() {
 
   return (
     <div className="container mt-5">
+      
+      <div className="row">
+        <div className="col-12">
       <h2>Dashboard</h2>
-
       {message ? <p>{message}</p> : <p>Loading...</p>}
+        </div>
+      </div>
+      
 
-      <button className="btn btn-danger" onClick={handleLogout}>
+      <div className="row">
+        <div className="col-6">
+<Link to="/">Go to Home</Link>
+
+   
+        </div>
+ <div className="col-6 text-end">
+   <button className="btn btn-danger" onClick={handleLogout}>
         Logout
       </button>
+ </div>
+
+
+      </div>
+      
+      
+      <div className="row">
+
+        <div className="col-lg-4">
+         <div className="py-2"> <Link to="/edit-about" className="btn btn-primary"><FiEdit /> About Us </Link></div>
+           <div className="py-2"> <Link to="/edit-about" className="btn btn-primary"><FiEdit /> About Us </Link></div>
+        </div>
+      </div>
+
+      
+
+      
     </div>
   );
 }

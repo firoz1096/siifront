@@ -14,7 +14,7 @@ import ContactUs from './pages/ContactUs';
 import EditAboutUs from './dashboard/EditAboutUs';
 import PostProject from './dashboard/PostProject';
 import ProjectsCRUD from './dashboard/ProjectsCRUD';
-import PostServices from './dashboard/PostServices';
+// import PostServices from './dashboard/PostServices';
 import ServicesCRUD from './dashboard/ServicesCRUD';
 //auth
 import Login from "./pages/Login";
@@ -83,14 +83,14 @@ root.render(
 
 
 
-        <Route 
+        {/* <Route 
           path="/post-services" 
           element={
             <ProtectedRoute>
               <PostServices />
             </ProtectedRoute>
           } 
-        />
+        /> */}
 
 
         <Route 
